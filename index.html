@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Document</title>
+    <style>
+        .cart{
+            display:flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 10px 15px;
+        }
+    </style>
+</head>
+<body class="flex justify-center items-center gap-2">
+    <div class="grid grid-cols-3 gap-4 mt-10 ml-2 w-[70%]">
+     <div class="gap-2  flex flex-col justify-center items-center shadow-lg rounded-lg">
+        <img src="./images/pngwing 5.png" alt="" class="w-[70%]">
+        <h1 class="text-lg font-medium">Mix flower</h1>
+        <p class="text-lg text-gray-600">Price: 50 $</p>
+        <p>Discount <span id="discount">30</span>%</p>
+        <button class="w-[80%] rounded-md bg-black text-white px-6 py-2 mb-4" onclick="addTocart(this)">Buy Now</button>
+ </div>
+ <div class="gap-2 flex flex-col justify-center items-center shadow-lg rounded-lg">
+    <img src="./images/img4.png" alt="" class="w-[70%]">
+    <h1 class="text-lg font-medium">White rose</h1>
+    <p class="text-lg text-gray-600">Price: 60 $</p>
+    <p>Discount <span id="discount">30</span>%</p>
+    <button class="w-[80%] rounded-md bg-black text-white px-6 py-2 mb-4" onclick="addTocart(this)">Buy Now</button>
+</div>
+<div class="gap-2  flex flex-col justify-center items-center shadow-lg rounded-lg">
+    <img src="./images/pngwing 6.png" alt="" class="w-[150px]">
+    <h1 class="text-lg font-medium">Pink Tulip</h1>
+    <p class="text-lg text-gray-600">Price: 70 $</p>
+    <p>Discount <span id="discount">30</span>%</p>
+    <button class="w-[80%] rounded-md bg-black text-white px-6 py-2 mb-4" onclick="addTocart(this)">Buy Now</button>
+</div>
+    </div>
+    <div class="w-[300px] h-[400px] shadow-lg shadow-black mt-10 mr-4 relative" id="cartDiv">
+      <h1 class="text-xl font-semibold ml-2">Cart</h1>
+      <div id="flowername" >
+      </div>
+      <div class="flex justify-between items-center bg-black text-white pl-4 fixed w-full absolute bottom-0">
+        <h1 class="text-lg font-medium">Total</h1>
+        <p id="total"></p>
+      </div>
+    </div>
+    <script src="function.js"></script>
+</body>
+</html>
