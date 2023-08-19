@@ -1,53 +1,47 @@
 let total = 0;
-let quantity = 0;
+let quantity= 0;
 let existingcart =[];
+
 function addTocart(target){
     const name = target.parentNode.childNodes[3].innerText;
     const price = target.parentNode.childNodes[5].innerText.split(" ")[1];
-    if(!existingcart.includes(name)){
-        existingcart.push(name);
-    }
-    total = parseInt(total) + parseInt(price);
     const  flowername = document.getElementById('flowername');
     const totaltext=document.getElementById('total');
     let count = flowername.childElementCount;
-  let quantitytext = document.getElementById('quantitytext');
-  const div = document.createElement('div');
-   div.classList.add('cart');
-
-   div.innerHTML = `<p>${count + 1}. ${name}</p>
-   <p id="quantitytext">1</p>
-   <p>${price}</p>`;
-   flowername.appendChild(div);
-
-   existingcart.forEach(e =>{
-    console.log
-   })
     
-const itemname = div.childNodes[0].innerText.split(". ")[1];
+    
+    if(!existingcart.includes(name)){
+        existingcart.push(name);
+        const div = document.createElement('div');
+        div.classList.add('cart');
+        div.innerHTML = `<p>${count + 1}. ${name}</p>
+        <p id="quantitytext">1</p>
+        <p>${price}</p>`;
+       flowername.appendChild(div);
+       
+    }
+
+    let quantitytext = document.getElementById('quantitytext');
+    quantitytext.innerText = quantity++;
+   
+    total = parseInt(total) + parseInt(price);
   
-
-   
-let itemamount = div.childNodes[2].innerText;
-quantity = quantity + parseInt(itemamount);
-
- if(quantity>1){
-    div.innerHTML = `<p>${count + 1}. ${name}</p>
-   <p id="quantitytext">${quantity}</p>
-   <p>${price}</p>`;
-   
- }else{
-    div.innerHTML = `<p>${count + 1}. ${name}</p>
-    <p id="quantitytext">1</p>
-    <p>${price}</p>`;
- }
- totaltext.innerText = total;
+    totaltext.innerText = total;
+    
+    
+    
+   //  let itemamount = div.childNodes[2].innerText;
+   //  quantity = quantity + parseInt(itemamount);
+   //  quantitytext.innerText = quantity;
+          
 
 
-console.log(existingcart);
+console.log(quantity);
   
  
 }
+
+
 
 // function addTocart(target) {
 //     const name = target.parentNode.childNodes[3].innerText;
